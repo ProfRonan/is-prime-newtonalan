@@ -1,0 +1,810 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.3.1, pluggy-1.0.0
+rootdir: /home/seuronao/Documents/Is Prime-04-24-2023-04-50-47/newtonalan
+collected 26 items
+
+test_main.py FFFFFFFFFFFFFFFFFFFFFFFFFF                                  [100%]
+
+=================================== FAILURES ===================================
+______________________________ test_not_valid[0] _______________________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fc057d18370>
+test_input = '0'
+
+    @pytest.mark.parametrize(
+        "test_input", ["0", "-1", "-2", "-10"],
+    )
+    def test_not_valid(monkeypatch: MonkeyPatch, test_input: list[str]):
+        mocked_input = lambda prompt="": test_input
+    
+        mocked_stdout = io.StringIO()
+    
+        with monkeypatch.context() as m:
+            m.setattr(builtins, "input", mocked_input)
+            m.setattr(sys, "stdout", mocked_stdout)
+    
+            sys.modules.pop("main", None)
+            importlib.import_module(name="main", package="files")
+    
+>       assert "Número inválido" in mocked_stdout.getvalue().strip()
+E       AssertionError: assert 'Número inválido' in ''
+E        +  where '' = <built-in method strip of str object at 0x7fc058b08030>()
+E        +    where <built-in method strip of str object at 0x7fc058b08030> = ''.strip
+E        +      where '' = <built-in method getvalue of _io.StringIO object at 0x7fc057d0dab0>()
+E        +        where <built-in method getvalue of _io.StringIO object at 0x7fc057d0dab0> = <_io.StringIO object at 0x7fc057d0dab0>.getvalue
+
+test_main.py:25: AssertionError
+______________________________ test_not_valid[-1] ______________________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fc057e80e80>
+test_input = '-1'
+
+    @pytest.mark.parametrize(
+        "test_input", ["0", "-1", "-2", "-10"],
+    )
+    def test_not_valid(monkeypatch: MonkeyPatch, test_input: list[str]):
+        mocked_input = lambda prompt="": test_input
+    
+        mocked_stdout = io.StringIO()
+    
+        with monkeypatch.context() as m:
+            m.setattr(builtins, "input", mocked_input)
+            m.setattr(sys, "stdout", mocked_stdout)
+    
+            sys.modules.pop("main", None)
+            importlib.import_module(name="main", package="files")
+    
+>       assert "Número inválido" in mocked_stdout.getvalue().strip()
+E       AssertionError: assert 'Número inválido' in ''
+E        +  where '' = <built-in method strip of str object at 0x7fc058b08030>()
+E        +    where <built-in method strip of str object at 0x7fc058b08030> = ''.strip
+E        +      where '' = <built-in method getvalue of _io.StringIO object at 0x7fc057d0e560>()
+E        +        where <built-in method getvalue of _io.StringIO object at 0x7fc057d0e560> = <_io.StringIO object at 0x7fc057d0e560>.getvalue
+
+test_main.py:25: AssertionError
+______________________________ test_not_valid[-2] ______________________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fc057d1a110>
+test_input = '-2'
+
+    @pytest.mark.parametrize(
+        "test_input", ["0", "-1", "-2", "-10"],
+    )
+    def test_not_valid(monkeypatch: MonkeyPatch, test_input: list[str]):
+        mocked_input = lambda prompt="": test_input
+    
+        mocked_stdout = io.StringIO()
+    
+        with monkeypatch.context() as m:
+            m.setattr(builtins, "input", mocked_input)
+            m.setattr(sys, "stdout", mocked_stdout)
+    
+            sys.modules.pop("main", None)
+            importlib.import_module(name="main", package="files")
+    
+>       assert "Número inválido" in mocked_stdout.getvalue().strip()
+E       AssertionError: assert 'Número inválido' in ''
+E        +  where '' = <built-in method strip of str object at 0x7fc058b08030>()
+E        +    where <built-in method strip of str object at 0x7fc058b08030> = ''.strip
+E        +      where '' = <built-in method getvalue of _io.StringIO object at 0x7fc057d0e8c0>()
+E        +        where <built-in method getvalue of _io.StringIO object at 0x7fc057d0e8c0> = <_io.StringIO object at 0x7fc057d0e8c0>.getvalue
+
+test_main.py:25: AssertionError
+_____________________________ test_not_valid[-10] ______________________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fc057e80760>
+test_input = '-10'
+
+    @pytest.mark.parametrize(
+        "test_input", ["0", "-1", "-2", "-10"],
+    )
+    def test_not_valid(monkeypatch: MonkeyPatch, test_input: list[str]):
+        mocked_input = lambda prompt="": test_input
+    
+        mocked_stdout = io.StringIO()
+    
+        with monkeypatch.context() as m:
+            m.setattr(builtins, "input", mocked_input)
+            m.setattr(sys, "stdout", mocked_stdout)
+    
+            sys.modules.pop("main", None)
+            importlib.import_module(name="main", package="files")
+    
+>       assert "Número inválido" in mocked_stdout.getvalue().strip()
+E       AssertionError: assert 'Número inválido' in ''
+E        +  where '' = <built-in method strip of str object at 0x7fc058b08030>()
+E        +    where <built-in method strip of str object at 0x7fc058b08030> = ''.strip
+E        +      where '' = <built-in method getvalue of _io.StringIO object at 0x7fc057d0ec20>()
+E        +        where <built-in method getvalue of _io.StringIO object at 0x7fc057d0ec20> = <_io.StringIO object at 0x7fc057d0ec20>.getvalue
+
+test_main.py:25: AssertionError
+______________________________ test_not_prime[1] _______________________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fc057d19240>
+test_input = '1'
+
+    @pytest.mark.parametrize(
+        "test_input", ["1", "4", "6", "8", "9", "10",
+                       "12", "14", "15", "16", "18", "20"],
+    )
+    def test_not_prime(monkeypatch: MonkeyPatch, test_input: list[str]):
+        mocked_input = lambda prompt="": test_input
+    
+        mocked_stdout = io.StringIO()
+    
+        with monkeypatch.context() as m:
+            m.setattr(builtins, "input", mocked_input)
+            m.setattr(sys, "stdout", mocked_stdout)
+    
+            sys.modules.pop("main", None)
+            importlib.import_module(name="main", package="files")
+    
+        assert "Número inválido" not in mocked_stdout.getvalue().strip()
+        assert "Primo" not in mocked_stdout.getvalue().strip()
+>       assert "Não primo" in mocked_stdout.getvalue().strip()
+E       AssertionError: assert 'Não primo' in ''
+E        +  where '' = <built-in method strip of str object at 0x7fc058b08030>()
+E        +    where <built-in method strip of str object at 0x7fc058b08030> = ''.strip
+E        +      where '' = <built-in method getvalue of _io.StringIO object at 0x7fc057d0ef80>()
+E        +        where <built-in method getvalue of _io.StringIO object at 0x7fc057d0ef80> = <_io.StringIO object at 0x7fc057d0ef80>.getvalue
+
+test_main.py:48: AssertionError
+______________________________ test_not_prime[4] _______________________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fc057e80400>
+test_input = '4'
+
+    @pytest.mark.parametrize(
+        "test_input", ["1", "4", "6", "8", "9", "10",
+                       "12", "14", "15", "16", "18", "20"],
+    )
+    def test_not_prime(monkeypatch: MonkeyPatch, test_input: list[str]):
+        mocked_input = lambda prompt="": test_input
+    
+        mocked_stdout = io.StringIO()
+    
+        with monkeypatch.context() as m:
+            m.setattr(builtins, "input", mocked_input)
+            m.setattr(sys, "stdout", mocked_stdout)
+    
+            sys.modules.pop("main", None)
+            importlib.import_module(name="main", package="files")
+    
+        assert "Número inválido" not in mocked_stdout.getvalue().strip()
+        assert "Primo" not in mocked_stdout.getvalue().strip()
+>       assert "Não primo" in mocked_stdout.getvalue().strip()
+E       AssertionError: assert 'Não primo' in ''
+E        +  where '' = <built-in method strip of str object at 0x7fc058b08030>()
+E        +    where <built-in method strip of str object at 0x7fc058b08030> = ''.strip
+E        +      where '' = <built-in method getvalue of _io.StringIO object at 0x7fc057d0f1c0>()
+E        +        where <built-in method getvalue of _io.StringIO object at 0x7fc057d0f1c0> = <_io.StringIO object at 0x7fc057d0f1c0>.getvalue
+
+test_main.py:48: AssertionError
+______________________________ test_not_prime[6] _______________________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fc057cde620>
+test_input = '6'
+
+    @pytest.mark.parametrize(
+        "test_input", ["1", "4", "6", "8", "9", "10",
+                       "12", "14", "15", "16", "18", "20"],
+    )
+    def test_not_prime(monkeypatch: MonkeyPatch, test_input: list[str]):
+        mocked_input = lambda prompt="": test_input
+    
+        mocked_stdout = io.StringIO()
+    
+        with monkeypatch.context() as m:
+            m.setattr(builtins, "input", mocked_input)
+            m.setattr(sys, "stdout", mocked_stdout)
+    
+            sys.modules.pop("main", None)
+            importlib.import_module(name="main", package="files")
+    
+        assert "Número inválido" not in mocked_stdout.getvalue().strip()
+        assert "Primo" not in mocked_stdout.getvalue().strip()
+>       assert "Não primo" in mocked_stdout.getvalue().strip()
+E       AssertionError: assert 'Não primo' in ''
+E        +  where '' = <built-in method strip of str object at 0x7fc058b08030>()
+E        +    where <built-in method strip of str object at 0x7fc058b08030> = ''.strip
+E        +      where '' = <built-in method getvalue of _io.StringIO object at 0x7fc057d0f520>()
+E        +        where <built-in method getvalue of _io.StringIO object at 0x7fc057d0f520> = <_io.StringIO object at 0x7fc057d0f520>.getvalue
+
+test_main.py:48: AssertionError
+______________________________ test_not_prime[8] _______________________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fc057edb3d0>
+test_input = '8'
+
+    @pytest.mark.parametrize(
+        "test_input", ["1", "4", "6", "8", "9", "10",
+                       "12", "14", "15", "16", "18", "20"],
+    )
+    def test_not_prime(monkeypatch: MonkeyPatch, test_input: list[str]):
+        mocked_input = lambda prompt="": test_input
+    
+        mocked_stdout = io.StringIO()
+    
+        with monkeypatch.context() as m:
+            m.setattr(builtins, "input", mocked_input)
+            m.setattr(sys, "stdout", mocked_stdout)
+    
+            sys.modules.pop("main", None)
+            importlib.import_module(name="main", package="files")
+    
+        assert "Número inválido" not in mocked_stdout.getvalue().strip()
+        assert "Primo" not in mocked_stdout.getvalue().strip()
+>       assert "Não primo" in mocked_stdout.getvalue().strip()
+E       AssertionError: assert 'Não primo' in ''
+E        +  where '' = <built-in method strip of str object at 0x7fc058b08030>()
+E        +    where <built-in method strip of str object at 0x7fc058b08030> = ''.strip
+E        +      where '' = <built-in method getvalue of _io.StringIO object at 0x7fc057d0f880>()
+E        +        where <built-in method getvalue of _io.StringIO object at 0x7fc057d0f880> = <_io.StringIO object at 0x7fc057d0f880>.getvalue
+
+test_main.py:48: AssertionError
+______________________________ test_not_prime[9] _______________________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fc057ce0790>
+test_input = '9'
+
+    @pytest.mark.parametrize(
+        "test_input", ["1", "4", "6", "8", "9", "10",
+                       "12", "14", "15", "16", "18", "20"],
+    )
+    def test_not_prime(monkeypatch: MonkeyPatch, test_input: list[str]):
+        mocked_input = lambda prompt="": test_input
+    
+        mocked_stdout = io.StringIO()
+    
+        with monkeypatch.context() as m:
+            m.setattr(builtins, "input", mocked_input)
+            m.setattr(sys, "stdout", mocked_stdout)
+    
+            sys.modules.pop("main", None)
+            importlib.import_module(name="main", package="files")
+    
+        assert "Número inválido" not in mocked_stdout.getvalue().strip()
+        assert "Primo" not in mocked_stdout.getvalue().strip()
+>       assert "Não primo" in mocked_stdout.getvalue().strip()
+E       AssertionError: assert 'Não primo' in ''
+E        +  where '' = <built-in method strip of str object at 0x7fc058b08030>()
+E        +    where <built-in method strip of str object at 0x7fc058b08030> = ''.strip
+E        +      where '' = <built-in method getvalue of _io.StringIO object at 0x7fc057d0fbe0>()
+E        +        where <built-in method getvalue of _io.StringIO object at 0x7fc057d0fbe0> = <_io.StringIO object at 0x7fc057d0fbe0>.getvalue
+
+test_main.py:48: AssertionError
+______________________________ test_not_prime[10] ______________________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fc057d18d60>
+test_input = '10'
+
+    @pytest.mark.parametrize(
+        "test_input", ["1", "4", "6", "8", "9", "10",
+                       "12", "14", "15", "16", "18", "20"],
+    )
+    def test_not_prime(monkeypatch: MonkeyPatch, test_input: list[str]):
+        mocked_input = lambda prompt="": test_input
+    
+        mocked_stdout = io.StringIO()
+    
+        with monkeypatch.context() as m:
+            m.setattr(builtins, "input", mocked_input)
+            m.setattr(sys, "stdout", mocked_stdout)
+    
+            sys.modules.pop("main", None)
+            importlib.import_module(name="main", package="files")
+    
+        assert "Número inválido" not in mocked_stdout.getvalue().strip()
+        assert "Primo" not in mocked_stdout.getvalue().strip()
+>       assert "Não primo" in mocked_stdout.getvalue().strip()
+E       AssertionError: assert 'Não primo' in ''
+E        +  where '' = <built-in method strip of str object at 0x7fc058b08030>()
+E        +    where <built-in method strip of str object at 0x7fc058b08030> = ''.strip
+E        +      where '' = <built-in method getvalue of _io.StringIO object at 0x7fc057d0ff40>()
+E        +        where <built-in method getvalue of _io.StringIO object at 0x7fc057d0ff40> = <_io.StringIO object at 0x7fc057d0ff40>.getvalue
+
+test_main.py:48: AssertionError
+______________________________ test_not_prime[12] ______________________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fc057d2f580>
+test_input = '12'
+
+    @pytest.mark.parametrize(
+        "test_input", ["1", "4", "6", "8", "9", "10",
+                       "12", "14", "15", "16", "18", "20"],
+    )
+    def test_not_prime(monkeypatch: MonkeyPatch, test_input: list[str]):
+        mocked_input = lambda prompt="": test_input
+    
+        mocked_stdout = io.StringIO()
+    
+        with monkeypatch.context() as m:
+            m.setattr(builtins, "input", mocked_input)
+            m.setattr(sys, "stdout", mocked_stdout)
+    
+            sys.modules.pop("main", None)
+            importlib.import_module(name="main", package="files")
+    
+        assert "Número inválido" not in mocked_stdout.getvalue().strip()
+        assert "Primo" not in mocked_stdout.getvalue().strip()
+>       assert "Não primo" in mocked_stdout.getvalue().strip()
+E       AssertionError: assert 'Não primo' in ''
+E        +  where '' = <built-in method strip of str object at 0x7fc058b08030>()
+E        +    where <built-in method strip of str object at 0x7fc058b08030> = ''.strip
+E        +      where '' = <built-in method getvalue of _io.StringIO object at 0x7fc057d94310>()
+E        +        where <built-in method getvalue of _io.StringIO object at 0x7fc057d94310> = <_io.StringIO object at 0x7fc057d94310>.getvalue
+
+test_main.py:48: AssertionError
+______________________________ test_not_prime[14] ______________________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fc057d0b6d0>
+test_input = '14'
+
+    @pytest.mark.parametrize(
+        "test_input", ["1", "4", "6", "8", "9", "10",
+                       "12", "14", "15", "16", "18", "20"],
+    )
+    def test_not_prime(monkeypatch: MonkeyPatch, test_input: list[str]):
+        mocked_input = lambda prompt="": test_input
+    
+        mocked_stdout = io.StringIO()
+    
+        with monkeypatch.context() as m:
+            m.setattr(builtins, "input", mocked_input)
+            m.setattr(sys, "stdout", mocked_stdout)
+    
+            sys.modules.pop("main", None)
+            importlib.import_module(name="main", package="files")
+    
+        assert "Número inválido" not in mocked_stdout.getvalue().strip()
+        assert "Primo" not in mocked_stdout.getvalue().strip()
+>       assert "Não primo" in mocked_stdout.getvalue().strip()
+E       AssertionError: assert 'Não primo' in ''
+E        +  where '' = <built-in method strip of str object at 0x7fc058b08030>()
+E        +    where <built-in method strip of str object at 0x7fc058b08030> = ''.strip
+E        +      where '' = <built-in method getvalue of _io.StringIO object at 0x7fc057d0f760>()
+E        +        where <built-in method getvalue of _io.StringIO object at 0x7fc057d0f760> = <_io.StringIO object at 0x7fc057d0f760>.getvalue
+
+test_main.py:48: AssertionError
+______________________________ test_not_prime[15] ______________________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fc057ce16c0>
+test_input = '15'
+
+    @pytest.mark.parametrize(
+        "test_input", ["1", "4", "6", "8", "9", "10",
+                       "12", "14", "15", "16", "18", "20"],
+    )
+    def test_not_prime(monkeypatch: MonkeyPatch, test_input: list[str]):
+        mocked_input = lambda prompt="": test_input
+    
+        mocked_stdout = io.StringIO()
+    
+        with monkeypatch.context() as m:
+            m.setattr(builtins, "input", mocked_input)
+            m.setattr(sys, "stdout", mocked_stdout)
+    
+            sys.modules.pop("main", None)
+            importlib.import_module(name="main", package="files")
+    
+        assert "Número inválido" not in mocked_stdout.getvalue().strip()
+        assert "Primo" not in mocked_stdout.getvalue().strip()
+>       assert "Não primo" in mocked_stdout.getvalue().strip()
+E       AssertionError: assert 'Não primo' in ''
+E        +  where '' = <built-in method strip of str object at 0x7fc058b08030>()
+E        +    where <built-in method strip of str object at 0x7fc058b08030> = ''.strip
+E        +      where '' = <built-in method getvalue of _io.StringIO object at 0x7fc057d0f1c0>()
+E        +        where <built-in method getvalue of _io.StringIO object at 0x7fc057d0f1c0> = <_io.StringIO object at 0x7fc057d0f1c0>.getvalue
+
+test_main.py:48: AssertionError
+______________________________ test_not_prime[16] ______________________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fc057d0a950>
+test_input = '16'
+
+    @pytest.mark.parametrize(
+        "test_input", ["1", "4", "6", "8", "9", "10",
+                       "12", "14", "15", "16", "18", "20"],
+    )
+    def test_not_prime(monkeypatch: MonkeyPatch, test_input: list[str]):
+        mocked_input = lambda prompt="": test_input
+    
+        mocked_stdout = io.StringIO()
+    
+        with monkeypatch.context() as m:
+            m.setattr(builtins, "input", mocked_input)
+            m.setattr(sys, "stdout", mocked_stdout)
+    
+            sys.modules.pop("main", None)
+            importlib.import_module(name="main", package="files")
+    
+        assert "Número inválido" not in mocked_stdout.getvalue().strip()
+        assert "Primo" not in mocked_stdout.getvalue().strip()
+>       assert "Não primo" in mocked_stdout.getvalue().strip()
+E       AssertionError: assert 'Não primo' in ''
+E        +  where '' = <built-in method strip of str object at 0x7fc058b08030>()
+E        +    where <built-in method strip of str object at 0x7fc058b08030> = ''.strip
+E        +      where '' = <built-in method getvalue of _io.StringIO object at 0x7fc057d0ec20>()
+E        +        where <built-in method getvalue of _io.StringIO object at 0x7fc057d0ec20> = <_io.StringIO object at 0x7fc057d0ec20>.getvalue
+
+test_main.py:48: AssertionError
+______________________________ test_not_prime[18] ______________________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fc057ce1540>
+test_input = '18'
+
+    @pytest.mark.parametrize(
+        "test_input", ["1", "4", "6", "8", "9", "10",
+                       "12", "14", "15", "16", "18", "20"],
+    )
+    def test_not_prime(monkeypatch: MonkeyPatch, test_input: list[str]):
+        mocked_input = lambda prompt="": test_input
+    
+        mocked_stdout = io.StringIO()
+    
+        with monkeypatch.context() as m:
+            m.setattr(builtins, "input", mocked_input)
+            m.setattr(sys, "stdout", mocked_stdout)
+    
+            sys.modules.pop("main", None)
+            importlib.import_module(name="main", package="files")
+    
+        assert "Número inválido" not in mocked_stdout.getvalue().strip()
+        assert "Primo" not in mocked_stdout.getvalue().strip()
+>       assert "Não primo" in mocked_stdout.getvalue().strip()
+E       AssertionError: assert 'Não primo' in ''
+E        +  where '' = <built-in method strip of str object at 0x7fc058b08030>()
+E        +    where <built-in method strip of str object at 0x7fc058b08030> = ''.strip
+E        +      where '' = <built-in method getvalue of _io.StringIO object at 0x7fc057d0e3b0>()
+E        +        where <built-in method getvalue of _io.StringIO object at 0x7fc057d0e3b0> = <_io.StringIO object at 0x7fc057d0e3b0>.getvalue
+
+test_main.py:48: AssertionError
+______________________________ test_not_prime[20] ______________________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fc057d2d540>
+test_input = '20'
+
+    @pytest.mark.parametrize(
+        "test_input", ["1", "4", "6", "8", "9", "10",
+                       "12", "14", "15", "16", "18", "20"],
+    )
+    def test_not_prime(monkeypatch: MonkeyPatch, test_input: list[str]):
+        mocked_input = lambda prompt="": test_input
+    
+        mocked_stdout = io.StringIO()
+    
+        with monkeypatch.context() as m:
+            m.setattr(builtins, "input", mocked_input)
+            m.setattr(sys, "stdout", mocked_stdout)
+    
+            sys.modules.pop("main", None)
+            importlib.import_module(name="main", package="files")
+    
+        assert "Número inválido" not in mocked_stdout.getvalue().strip()
+        assert "Primo" not in mocked_stdout.getvalue().strip()
+>       assert "Não primo" in mocked_stdout.getvalue().strip()
+E       AssertionError: assert 'Não primo' in ''
+E        +  where '' = <built-in method strip of str object at 0x7fc058b08030>()
+E        +    where <built-in method strip of str object at 0x7fc058b08030> = ''.strip
+E        +      where '' = <built-in method getvalue of _io.StringIO object at 0x7fc057d94670>()
+E        +        where <built-in method getvalue of _io.StringIO object at 0x7fc057d94670> = <_io.StringIO object at 0x7fc057d94670>.getvalue
+
+test_main.py:48: AssertionError
+________________________________ test_prime[2] _________________________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fc057ce1750>
+test_input = '2'
+
+    @pytest.mark.parametrize(
+        "test_input", ["2", "3", "5", "7", "11", "13", "17", "19", "23", "29"],
+    )
+    def test_prime(monkeypatch: MonkeyPatch, test_input: list[str]):
+        mocked_input = lambda prompt="": test_input
+    
+        mocked_stdout = io.StringIO()
+    
+        with monkeypatch.context() as m:
+            m.setattr(builtins, "input", mocked_input)
+            m.setattr(sys, "stdout", mocked_stdout)
+    
+            sys.modules.pop("main", None)
+            importlib.import_module(name="main", package="files")
+    
+        assert "Número inválido" not in mocked_stdout.getvalue().strip()
+>       assert "Primo" in mocked_stdout.getvalue().strip()
+E       AssertionError: assert 'Primo' in ''
+E        +  where '' = <built-in method strip of str object at 0x7fc058b08030>()
+E        +    where <built-in method strip of str object at 0x7fc058b08030> = ''.strip
+E        +      where '' = <built-in method getvalue of _io.StringIO object at 0x7fc057d94820>()
+E        +        where <built-in method getvalue of _io.StringIO object at 0x7fc057d94820> = <_io.StringIO object at 0x7fc057d94820>.getvalue
+
+test_main.py:67: AssertionError
+________________________________ test_prime[3] _________________________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fc057d2eda0>
+test_input = '3'
+
+    @pytest.mark.parametrize(
+        "test_input", ["2", "3", "5", "7", "11", "13", "17", "19", "23", "29"],
+    )
+    def test_prime(monkeypatch: MonkeyPatch, test_input: list[str]):
+        mocked_input = lambda prompt="": test_input
+    
+        mocked_stdout = io.StringIO()
+    
+        with monkeypatch.context() as m:
+            m.setattr(builtins, "input", mocked_input)
+            m.setattr(sys, "stdout", mocked_stdout)
+    
+            sys.modules.pop("main", None)
+            importlib.import_module(name="main", package="files")
+    
+        assert "Número inválido" not in mocked_stdout.getvalue().strip()
+>       assert "Primo" in mocked_stdout.getvalue().strip()
+E       AssertionError: assert 'Primo' in ''
+E        +  where '' = <built-in method strip of str object at 0x7fc058b08030>()
+E        +    where <built-in method strip of str object at 0x7fc058b08030> = ''.strip
+E        +      where '' = <built-in method getvalue of _io.StringIO object at 0x7fc057d94af0>()
+E        +        where <built-in method getvalue of _io.StringIO object at 0x7fc057d94af0> = <_io.StringIO object at 0x7fc057d94af0>.getvalue
+
+test_main.py:67: AssertionError
+________________________________ test_prime[5] _________________________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fc057ce0c70>
+test_input = '5'
+
+    @pytest.mark.parametrize(
+        "test_input", ["2", "3", "5", "7", "11", "13", "17", "19", "23", "29"],
+    )
+    def test_prime(monkeypatch: MonkeyPatch, test_input: list[str]):
+        mocked_input = lambda prompt="": test_input
+    
+        mocked_stdout = io.StringIO()
+    
+        with monkeypatch.context() as m:
+            m.setattr(builtins, "input", mocked_input)
+            m.setattr(sys, "stdout", mocked_stdout)
+    
+            sys.modules.pop("main", None)
+            importlib.import_module(name="main", package="files")
+    
+        assert "Número inválido" not in mocked_stdout.getvalue().strip()
+>       assert "Primo" in mocked_stdout.getvalue().strip()
+E       AssertionError: assert 'Primo' in ''
+E        +  where '' = <built-in method strip of str object at 0x7fc058b08030>()
+E        +    where <built-in method strip of str object at 0x7fc058b08030> = ''.strip
+E        +      where '' = <built-in method getvalue of _io.StringIO object at 0x7fc057d94dc0>()
+E        +        where <built-in method getvalue of _io.StringIO object at 0x7fc057d94dc0> = <_io.StringIO object at 0x7fc057d94dc0>.getvalue
+
+test_main.py:67: AssertionError
+________________________________ test_prime[7] _________________________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fc057d2c6d0>
+test_input = '7'
+
+    @pytest.mark.parametrize(
+        "test_input", ["2", "3", "5", "7", "11", "13", "17", "19", "23", "29"],
+    )
+    def test_prime(monkeypatch: MonkeyPatch, test_input: list[str]):
+        mocked_input = lambda prompt="": test_input
+    
+        mocked_stdout = io.StringIO()
+    
+        with monkeypatch.context() as m:
+            m.setattr(builtins, "input", mocked_input)
+            m.setattr(sys, "stdout", mocked_stdout)
+    
+            sys.modules.pop("main", None)
+            importlib.import_module(name="main", package="files")
+    
+        assert "Número inválido" not in mocked_stdout.getvalue().strip()
+>       assert "Primo" in mocked_stdout.getvalue().strip()
+E       AssertionError: assert 'Primo' in ''
+E        +  where '' = <built-in method strip of str object at 0x7fc058b08030>()
+E        +    where <built-in method strip of str object at 0x7fc058b08030> = ''.strip
+E        +      where '' = <built-in method getvalue of _io.StringIO object at 0x7fc057d95090>()
+E        +        where <built-in method getvalue of _io.StringIO object at 0x7fc057d95090> = <_io.StringIO object at 0x7fc057d95090>.getvalue
+
+test_main.py:67: AssertionError
+________________________________ test_prime[11] ________________________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fc057ce2560>
+test_input = '11'
+
+    @pytest.mark.parametrize(
+        "test_input", ["2", "3", "5", "7", "11", "13", "17", "19", "23", "29"],
+    )
+    def test_prime(monkeypatch: MonkeyPatch, test_input: list[str]):
+        mocked_input = lambda prompt="": test_input
+    
+        mocked_stdout = io.StringIO()
+    
+        with monkeypatch.context() as m:
+            m.setattr(builtins, "input", mocked_input)
+            m.setattr(sys, "stdout", mocked_stdout)
+    
+            sys.modules.pop("main", None)
+            importlib.import_module(name="main", package="files")
+    
+        assert "Número inválido" not in mocked_stdout.getvalue().strip()
+>       assert "Primo" in mocked_stdout.getvalue().strip()
+E       AssertionError: assert 'Primo' in ''
+E        +  where '' = <built-in method strip of str object at 0x7fc058b08030>()
+E        +    where <built-in method strip of str object at 0x7fc058b08030> = ''.strip
+E        +      where '' = <built-in method getvalue of _io.StringIO object at 0x7fc057d95360>()
+E        +        where <built-in method getvalue of _io.StringIO object at 0x7fc057d95360> = <_io.StringIO object at 0x7fc057d95360>.getvalue
+
+test_main.py:67: AssertionError
+________________________________ test_prime[13] ________________________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fc057d2c670>
+test_input = '13'
+
+    @pytest.mark.parametrize(
+        "test_input", ["2", "3", "5", "7", "11", "13", "17", "19", "23", "29"],
+    )
+    def test_prime(monkeypatch: MonkeyPatch, test_input: list[str]):
+        mocked_input = lambda prompt="": test_input
+    
+        mocked_stdout = io.StringIO()
+    
+        with monkeypatch.context() as m:
+            m.setattr(builtins, "input", mocked_input)
+            m.setattr(sys, "stdout", mocked_stdout)
+    
+            sys.modules.pop("main", None)
+            importlib.import_module(name="main", package="files")
+    
+        assert "Número inválido" not in mocked_stdout.getvalue().strip()
+>       assert "Primo" in mocked_stdout.getvalue().strip()
+E       AssertionError: assert 'Primo' in ''
+E        +  where '' = <built-in method strip of str object at 0x7fc058b08030>()
+E        +    where <built-in method strip of str object at 0x7fc058b08030> = ''.strip
+E        +      where '' = <built-in method getvalue of _io.StringIO object at 0x7fc057d956c0>()
+E        +        where <built-in method getvalue of _io.StringIO object at 0x7fc057d956c0> = <_io.StringIO object at 0x7fc057d956c0>.getvalue
+
+test_main.py:67: AssertionError
+________________________________ test_prime[17] ________________________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fc057d1b3a0>
+test_input = '17'
+
+    @pytest.mark.parametrize(
+        "test_input", ["2", "3", "5", "7", "11", "13", "17", "19", "23", "29"],
+    )
+    def test_prime(monkeypatch: MonkeyPatch, test_input: list[str]):
+        mocked_input = lambda prompt="": test_input
+    
+        mocked_stdout = io.StringIO()
+    
+        with monkeypatch.context() as m:
+            m.setattr(builtins, "input", mocked_input)
+            m.setattr(sys, "stdout", mocked_stdout)
+    
+            sys.modules.pop("main", None)
+            importlib.import_module(name="main", package="files")
+    
+        assert "Número inválido" not in mocked_stdout.getvalue().strip()
+>       assert "Primo" in mocked_stdout.getvalue().strip()
+E       AssertionError: assert 'Primo' in ''
+E        +  where '' = <built-in method strip of str object at 0x7fc058b08030>()
+E        +    where <built-in method strip of str object at 0x7fc058b08030> = ''.strip
+E        +      where '' = <built-in method getvalue of _io.StringIO object at 0x7fc057d95990>()
+E        +        where <built-in method getvalue of _io.StringIO object at 0x7fc057d95990> = <_io.StringIO object at 0x7fc057d95990>.getvalue
+
+test_main.py:67: AssertionError
+________________________________ test_prime[19] ________________________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fc057d08af0>
+test_input = '19'
+
+    @pytest.mark.parametrize(
+        "test_input", ["2", "3", "5", "7", "11", "13", "17", "19", "23", "29"],
+    )
+    def test_prime(monkeypatch: MonkeyPatch, test_input: list[str]):
+        mocked_input = lambda prompt="": test_input
+    
+        mocked_stdout = io.StringIO()
+    
+        with monkeypatch.context() as m:
+            m.setattr(builtins, "input", mocked_input)
+            m.setattr(sys, "stdout", mocked_stdout)
+    
+            sys.modules.pop("main", None)
+            importlib.import_module(name="main", package="files")
+    
+        assert "Número inválido" not in mocked_stdout.getvalue().strip()
+>       assert "Primo" in mocked_stdout.getvalue().strip()
+E       AssertionError: assert 'Primo' in ''
+E        +  where '' = <built-in method strip of str object at 0x7fc058b08030>()
+E        +    where <built-in method strip of str object at 0x7fc058b08030> = ''.strip
+E        +      where '' = <built-in method getvalue of _io.StringIO object at 0x7fc057d0ec20>()
+E        +        where <built-in method getvalue of _io.StringIO object at 0x7fc057d0ec20> = <_io.StringIO object at 0x7fc057d0ec20>.getvalue
+
+test_main.py:67: AssertionError
+________________________________ test_prime[23] ________________________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fc057d1a770>
+test_input = '23'
+
+    @pytest.mark.parametrize(
+        "test_input", ["2", "3", "5", "7", "11", "13", "17", "19", "23", "29"],
+    )
+    def test_prime(monkeypatch: MonkeyPatch, test_input: list[str]):
+        mocked_input = lambda prompt="": test_input
+    
+        mocked_stdout = io.StringIO()
+    
+        with monkeypatch.context() as m:
+            m.setattr(builtins, "input", mocked_input)
+            m.setattr(sys, "stdout", mocked_stdout)
+    
+            sys.modules.pop("main", None)
+            importlib.import_module(name="main", package="files")
+    
+        assert "Número inválido" not in mocked_stdout.getvalue().strip()
+>       assert "Primo" in mocked_stdout.getvalue().strip()
+E       AssertionError: assert 'Primo' in ''
+E        +  where '' = <built-in method strip of str object at 0x7fc058b08030>()
+E        +    where <built-in method strip of str object at 0x7fc058b08030> = ''.strip
+E        +      where '' = <built-in method getvalue of _io.StringIO object at 0x7fc057d0f400>()
+E        +        where <built-in method getvalue of _io.StringIO object at 0x7fc057d0f400> = <_io.StringIO object at 0x7fc057d0f400>.getvalue
+
+test_main.py:67: AssertionError
+________________________________ test_prime[29] ________________________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fc057d0aa40>
+test_input = '29'
+
+    @pytest.mark.parametrize(
+        "test_input", ["2", "3", "5", "7", "11", "13", "17", "19", "23", "29"],
+    )
+    def test_prime(monkeypatch: MonkeyPatch, test_input: list[str]):
+        mocked_input = lambda prompt="": test_input
+    
+        mocked_stdout = io.StringIO()
+    
+        with monkeypatch.context() as m:
+            m.setattr(builtins, "input", mocked_input)
+            m.setattr(sys, "stdout", mocked_stdout)
+    
+            sys.modules.pop("main", None)
+            importlib.import_module(name="main", package="files")
+    
+        assert "Número inválido" not in mocked_stdout.getvalue().strip()
+>       assert "Primo" in mocked_stdout.getvalue().strip()
+E       AssertionError: assert 'Primo' in ''
+E        +  where '' = <built-in method strip of str object at 0x7fc058b08030>()
+E        +    where <built-in method strip of str object at 0x7fc058b08030> = ''.strip
+E        +      where '' = <built-in method getvalue of _io.StringIO object at 0x7fc057d941f0>()
+E        +        where <built-in method getvalue of _io.StringIO object at 0x7fc057d941f0> = <_io.StringIO object at 0x7fc057d941f0>.getvalue
+
+test_main.py:67: AssertionError
+=========================== short test summary info ============================
+FAILED test_main.py::test_not_valid[0] - AssertionError: assert 'Número invál...
+FAILED test_main.py::test_not_valid[-1] - AssertionError: assert 'Número invá...
+FAILED test_main.py::test_not_valid[-2] - AssertionError: assert 'Número invá...
+FAILED test_main.py::test_not_valid[-10] - AssertionError: assert 'Número inv...
+FAILED test_main.py::test_not_prime[1] - AssertionError: assert 'Não primo' i...
+FAILED test_main.py::test_not_prime[4] - AssertionError: assert 'Não primo' i...
+FAILED test_main.py::test_not_prime[6] - AssertionError: assert 'Não primo' i...
+FAILED test_main.py::test_not_prime[8] - AssertionError: assert 'Não primo' i...
+FAILED test_main.py::test_not_prime[9] - AssertionError: assert 'Não primo' i...
+FAILED test_main.py::test_not_prime[10] - AssertionError: assert 'Não primo' ...
+FAILED test_main.py::test_not_prime[12] - AssertionError: assert 'Não primo' ...
+FAILED test_main.py::test_not_prime[14] - AssertionError: assert 'Não primo' ...
+FAILED test_main.py::test_not_prime[15] - AssertionError: assert 'Não primo' ...
+FAILED test_main.py::test_not_prime[16] - AssertionError: assert 'Não primo' ...
+FAILED test_main.py::test_not_prime[18] - AssertionError: assert 'Não primo' ...
+FAILED test_main.py::test_not_prime[20] - AssertionError: assert 'Não primo' ...
+FAILED test_main.py::test_prime[2] - AssertionError: assert 'Primo' in ''
+FAILED test_main.py::test_prime[3] - AssertionError: assert 'Primo' in ''
+FAILED test_main.py::test_prime[5] - AssertionError: assert 'Primo' in ''
+FAILED test_main.py::test_prime[7] - AssertionError: assert 'Primo' in ''
+FAILED test_main.py::test_prime[11] - AssertionError: assert 'Primo' in ''
+FAILED test_main.py::test_prime[13] - AssertionError: assert 'Primo' in ''
+FAILED test_main.py::test_prime[17] - AssertionError: assert 'Primo' in ''
+FAILED test_main.py::test_prime[19] - AssertionError: assert 'Primo' in ''
+FAILED test_main.py::test_prime[23] - AssertionError: assert 'Primo' in ''
+FAILED test_main.py::test_prime[29] - AssertionError: assert 'Primo' in ''
+============================== 26 failed in 0.13s ==============================
